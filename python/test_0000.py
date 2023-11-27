@@ -1,0 +1,2 @@
+msg = "XCL"
+print(msg)
