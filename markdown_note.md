@@ -16,7 +16,7 @@
 # Section 3 Link
 ![image](https://avatars.githubusercontent.com/u/119933389?v=4)
 
-[gitrepo link](https://github.com/CLxxxxxxxxara/coding_study/tree/master)
+[插入链接](https://github.com/CLxxxxxxxxara/coding_study/tree/master)
 
 # Section 4 Code
 `# one line code`
