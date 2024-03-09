@@ -57,3 +57,43 @@ public:
     }
 };
 ```
+### 分隔链表
+725 https://leetcode.cn/problems/split-linked-list-in-parts/description/
+
+思路：
+
+把每一个分隔开来的小链表看作一个小篮子，先遍历链表确定每个篮子里面装几个数字，再把链表split
+
+要注意最后要求返回的list的形式，每一个元素是一个链表的指针
+```python
+class Solution:
+    def splitListToParts(self, head: Optional[ListNode], k: int) -> List[Optional[ListNode]]:
+        basket = [0]*k
+        node_cur = head
+        i=0
+        while node_cur:
+            basket[i]+=1
+            i = (i+1)%k
+            node_cur = node_cur.next
+
+        final_list=[]
+        for i in range(k):
+            num = basket[i]
+            if num == 0:
+                small_list = None
+            else:
+                small_list = head
+                prev = None
+                curr = head
+                for n in range(num):
+                    prev = curr
+                    curr = curr.next
+                    
+
+                head = curr
+                prev.next = None
+                
+            final_list.append(small_list)
+        return final_list
+            
+```
