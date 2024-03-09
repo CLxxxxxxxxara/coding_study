@@ -2,7 +2,9 @@
 ## 链表
 ### 回文链表
 234. https://leetcode.cn/problems/palindrome-linked-list/description/
+
 思路：
+
 双指针 一快一慢，找到链表的后半的head（因为是单链表，不能反向遍历）
 
 把后半reverse过来，再与前半进行比较
