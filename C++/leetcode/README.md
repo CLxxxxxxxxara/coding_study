@@ -97,3 +97,33 @@ class Solution:
         return final_list
             
 ```
+### 奇偶链表
+328 https://leetcode.cn/problems/odd-even-linked-list/description/
+
+思路不难，但是要注意的是循环结束的判断条件
+```python
+class Solution:
+    def oddEvenList(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        
+        if head and head.next:
+            odd_ptr = head
+            even_ptr = head.next
+        else :
+            return head
+        odd_head, even_head = odd_ptr, even_ptr
+        odd_cur, even_cur = odd_head, even_head
+        while even_cur :
+            odd_ptr=odd_ptr.next.next
+            if even_ptr.next:
+                even_ptr = even_ptr.next.next
+            else:
+                even_ptr = None
+            if not odd_ptr:
+                break
+            odd_cur.next = odd_ptr
+            even_cur.next = even_ptr
+            odd_cur = odd_cur.next
+            even_cur = even_cur.next
+        odd_cur.next = even_head
+        return odd_head
+```
